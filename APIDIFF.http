@@ -1,0 +1,6 @@
+@APIDIFF_HostAddress = http://localhost:5290
+
+GET {{APIDIFF_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
