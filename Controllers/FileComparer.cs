@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APIDiff.Controllers
@@ -21,15 +20,6 @@ namespace APIDiff.Controllers
             //difference between file names
             IFormFile og = requestedFiles.File1;
             IFormFile updated = requestedFiles.File2;
-            string fileNameChange;
-            if (!(og.FileName == updated.FileName))
-            {
-                fileNameChange = $"{og.FileName} --> {updated.FileName}";
-            }
-            else
-            {
-                fileNameChange = $"{og.FileName}";
-            }
 
             //Read file 1
             StreamReader reader1 = new StreamReader(og.OpenReadStream());
@@ -41,13 +31,53 @@ namespace APIDiff.Controllers
 
             //Some how get the differences by my own
 
-            var differences = GetDifferences(file1Content, file2Content);
+            var differences = GetDifferences(
+                file1Content,
+                file2Content,
+                og.FileName,
+                updated.FileName
+            );
 
-            return Ok(differences);
+            return Ok(
+                @$"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>File Differences</title>
+            </head>
+            <body>
+            <h2>{differences[2]}</h2>
+            <div id='container'>
+            <div id='newText'>
+            {differences[0]}
+            </div>
+            <div id='oldText'>
+            {differences[1]}
+            </div>
+            </div>
+            </ body >
+            </html>"
+            );
         }
 
-        private string GetDifferences(string content1, string content2)
+        private string[] GetDifferences(
+            string content1,
+            string content2,
+            string originalFileName,
+            string updatedFileName
+        )
         {
+            string FileName;
+
+            if (!(originalFileName == updatedFileName))
+            {
+                FileName = $"File name changed from {originalFileName} --> {updatedFileName}";
+            }
+            else
+            {
+                FileName = $"File name does not changed {originalFileName}";
+            }
+
             // separate line by line logic
             var original = content1.Split("\n");
             var updated = content2.Split("\n");
@@ -56,8 +86,7 @@ namespace APIDiff.Controllers
             int maxLengthLines = Math.Max(original.Length, updated.Length);
 
             StringBuilder sbLineDifferences = new StringBuilder();
-
-            StringBuilder sbWordDifferences = new StringBuilder();
+            StringBuilder sbLineoriginal = new StringBuilder();
 
             for (int i = 0; i < maxLengthLines; i++)
             {
@@ -65,32 +94,23 @@ namespace APIDiff.Controllers
                 var originalLine = i < original.Length ? original[i] : "No Line";
                 var updatedLine = i < updated.Length ? updated[i] : "No Line";
 
+                if (originalLine != "No Line")
+                {
+                    sbLineoriginal.AppendLine($"<pre id='old'>{originalLine}</pre>");
+                }
+
                 // if updated is different than original = difference
                 if (updatedLine != originalLine)
                 {
-                    sbLineDifferences.AppendLine($"<p id=\"new\">{updatedLine}</p>");
-
-                    //separate word by word
-                    var originalWord = originalLine.Split(" ");
-                    var updatedWord = updatedLine.Split(" ");
-
-                    //
-                    int maxLengthWord = Math.Max(originalWord.Length, updatedWord.Length);
-
-                    for (int j = 0; j < maxLengthWord; j++)
-                    {
-                        var word1 = j < originalWord.Length ? originalWord[j] : " ";
-                        var word2 = j < updatedWord.Length ? updatedWord[j] : " ";
-
-                        if (word2 != word1)
-                        {
-                            sbWordDifferences.AppendLine($"{word2}");
-                        }
-                    }
+                    sbLineDifferences.AppendLine($"<pre id='new'>{updatedLine}</pre>");
+                }
+                else
+                {
+                    sbLineDifferences.AppendLine($"<pre id='same'>{updatedLine}</pre>");
                 }
             }
 
-            return sbLineDifferences.ToString();
+            return [sbLineDifferences.ToString(), sbLineoriginal.ToString(), FileName];
         }
     }
 
