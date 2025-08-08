@@ -29,9 +29,8 @@ C:\Users\Shado\Desktop\APIDIFF\obj\Debug\net9.0\APIDIFF.pdb
 C:\Users\Shado\Desktop\APIDIFF\obj\Debug\net9.0\APIDIFF.genruntimeconfig.cache
 C:\Users\Shado\Desktop\APIDIFF\obj\Debug\net9.0\ref\APIDIFF.dll
 C:\Users\Shado\Desktop\APIDiff\obj\Debug\net9.0\APIDIFF.sourcelink.json
-C:\Users\Shado\Desktop\APIDiff\obj\Debug\net9.0\staticwebassets\msbuild.APIDIFF.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Shado\Desktop\APIDiff\obj\Debug\net9.0\staticwebassets\msbuild.APIDIFF.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\Shado\Desktop\APIDiff\obj\Debug\net9.0\staticwebassets\msbuild.build.APIDIFF.props
-C:\Users\Shado\Desktop\APIDiff\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.APIDIFF.props
-C:\Users\Shado\Desktop\APIDiff\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.APIDIFF.props
-C:\Users\Shado\Desktop\APIDiff\obj\Debug\net9.0\staticwebassets.pack.json
+C:\Users\Shado\Desktop\APIDIFF\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\Shado\Desktop\APIDIFF\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\Shado\Desktop\APIDIFF\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\Shado\Desktop\APIDIFF\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\Shado\Desktop\APIDIFF\obj\Debug\net9.0\staticwebassets.build.json.cache

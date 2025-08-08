@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shado\\Desktop\\APIDiff\\APIDIFF.csproj": {}
+    "C:\\Users\\Shado\\Desktop\\APIDIFF\\APIDIFF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shado\\Desktop\\APIDiff\\APIDIFF.csproj": {
+    "C:\\Users\\Shado\\Desktop\\APIDIFF\\APIDIFF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shado\\Desktop\\APIDiff\\APIDIFF.csproj",
+        "projectUniqueName": "C:\\Users\\Shado\\Desktop\\APIDIFF\\APIDIFF.csproj",
         "projectName": "APIDIFF",
-        "projectPath": "C:\\Users\\Shado\\Desktop\\APIDiff\\APIDIFF.csproj",
+        "projectPath": "C:\\Users\\Shado\\Desktop\\APIDIFF\\APIDIFF.csproj",
         "packagesPath": "C:\\Users\\Shado\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shado\\Desktop\\APIDiff\\obj\\",
+        "outputPath": "C:\\Users\\Shado\\Desktop\\APIDIFF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Shado\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -72,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

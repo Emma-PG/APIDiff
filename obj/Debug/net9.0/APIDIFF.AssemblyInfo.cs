@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("APIDIFF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52b2e0588de2da8513a7cc02c424061f2f91d42e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1046544fb0a04745e043c47d9f12038e31a76db")]
 [assembly: System.Reflection.AssemblyProductAttribute("APIDIFF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("APIDIFF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
